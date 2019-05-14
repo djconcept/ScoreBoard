@@ -83,14 +83,6 @@ void loop() {
         break;
       }
     }
-    if ((buttonState[i] != previousButtonState[i]) && (buttonState[i] == HIGH))
-    {
-      switch (i) {
-        case 9:
-        Keyboard.release(KEY_LEFT_CTRL);
-        break;
-      }
-    }
     previousButtonState[i] = buttonState[i];
   }
 }
