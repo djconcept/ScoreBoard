@@ -25,7 +25,6 @@ int myPins[NBR_TCH] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 #define K_NUMPAD_8        232
 #define K_NUMPAD_9        233
 #define K_NUMPAD_0        234
-
   
 int buttonState[NBR_TCH];
 int previousButtonState[NBR_TCH];
@@ -40,13 +39,9 @@ void setup() {
 }
 
 void loop() {
-
   delay(100);
-
-  for (int i = 0; i <= NBR_TCH; i++) 
-  {
+  for (int i = 0; i <= NBR_TCH; i++){
     buttonState[i] = digitalRead(myPins[i]);
-
     if (i == B_WHITE_Top){
       if (buttonState[i] == LOW){
         Keyboard.press(KEY_LEFT_CTRL);     
@@ -55,10 +50,7 @@ void loop() {
          Keyboard.release(KEY_LEFT_CTRL);
       }
     }
-
-    
-    if ((buttonState[i] != previousButtonState[i]) && (buttonState[i] == LOW))
-    {
+    if ((buttonState[i] != previousButtonState[i]) && (buttonState[i] == LOW)){
       switch (i) {
         case B_RED_Bottom:
         Keyboard.write(K_NUMPAD_0);
@@ -97,7 +89,6 @@ void loop() {
         break;
         
         case B_WHITE_Top:
-        
         break;
 
         case B_YELLOW_Right:
